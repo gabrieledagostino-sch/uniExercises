@@ -52,9 +52,12 @@ Mkfile.old
 dkms.conf
 
 #compiled stuff
-L1_8/bubbleSort
-L1_8/coordinate
-L1_8/union
+15-sep-Classe/bubbleSort
+15-sep-Classe/coordinate
+15-sep-Classe/union
+EsL1_8/main
+EsL1_9/main
+EsL1_10/main
 
 #MacOS stuff
 .DS_Store

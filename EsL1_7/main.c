@@ -5,7 +5,17 @@ int main()
 {
     unsigned short int choice;
     float initPrice, percentage;
-    
+    int conditions =  choice == 0         ||
+                      choice == 1         ||
+                      percentage < 0      ||
+                      percentage > 100    ||
+                      initPrice < 0;
+    if(conditions){
+      printf("invalid input\n");
+      return 0;
+    }
+
+
     //input
     scanf("%f", &choice);
     scanf("%f", &initPrice);

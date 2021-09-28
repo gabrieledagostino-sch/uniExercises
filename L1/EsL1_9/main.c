@@ -3,8 +3,10 @@
 int main()
 {
     char c;
-    scanf("%c", &c);
-    printf("%c", c+32);
+    if(scanf("%[a-z]", &c) != 1)
+      printf("invalid input: must be lowercase letter");
+    else
+      printf("%c", c+('A'-'a'));
 
     return 0;
 }

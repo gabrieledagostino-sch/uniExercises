@@ -16,7 +16,7 @@ int main()
     m = secs % 60;
     secs /= 60;
     h = secs;
-    printf("%d h %d min %d s",h,m,s);
+    printf("%d h %d min %d s\n",h,m,s);
 
     return 0;
 }

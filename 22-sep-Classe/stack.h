@@ -9,8 +9,12 @@ typedef struct Stack
 
 } Stack;
 
+Stack newStack();
+
 int push(Stack*, float);
 float pop(Stack*);
+
+int clear(Stack* );
 
 float top(Stack);
 unsigned short int empty(Stack);

@@ -13,13 +13,13 @@ float product(Stack *);
 float ratio(Stack *);
 
 int main(){
-    Stack s = {NULL, 0, 1};
+    Stack s = newStack();
 
     bool end = false;
 
     while (!end){
         char n[100];
-        
+        printf("a\n");
         scanf("%s", n);
 
         switch (n[0])
@@ -47,6 +47,8 @@ int main(){
     }
 
     printf("%.2f", pop(&s));
+
+    clear(&s);
 
     return 0;
 }

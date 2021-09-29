@@ -19,7 +19,7 @@ int main(){
 
     while (!end){
         char n[100];
-        printf("a\n");
+        
         scanf("%s", n);
 
         switch (n[0])

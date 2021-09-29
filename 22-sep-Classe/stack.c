@@ -7,6 +7,7 @@
 ********************************/
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #define bool unsigned short int
 #define true 1
 #define false 0
@@ -38,10 +39,14 @@ void printStack(Stack* );   //prints the stack via printf the format is val->nex
 int clear(Stack *);
 int clearStack(Stack *);
 
-int push(Stack *s, float a){
+int push(Stack *s, float a)
+{
     if(s->head == 0) return -1;
     
     Stack* newEl = (Stack*)malloc(sizeof(Stack));
+
+    if(newEl == NULL) return -1;
+    
     newEl->head = 0;
     newEl->next = s->next;
     newEl->val = a;
@@ -50,7 +55,9 @@ int push(Stack *s, float a){
     
     return 1;
 }
-float pop(Stack *s){
+
+float pop(Stack *s)
+{
     if(s->head == 0) return -1;
     if(s->next == NULL) return -1;
 
@@ -63,17 +70,20 @@ float pop(Stack *s){
     return val;
 }
 
-float top(Stack s){
-    if(s.head == 0) return -1;
+float top(Stack s)
+{
+    if(s.head == 0) return __FLT_MAX__;
     return s.next->val;
 }
 
-bool empty(Stack s){
+bool empty(Stack s)
+{
     return s.next == 0;
 }
 
-void printStack(Stack* s){
-    printf("%f->", s->val);
+void printStack(Stack* s)
+{
+    printf("%.2f->", s->val);
     if(s->next == NULL)
     {
         printf("|\n");
@@ -83,20 +93,18 @@ void printStack(Stack* s){
     printStack(s->next);
 }
 
-int clear(Stack *s){
+int clear(Stack *s)
+{
     int a = 0;
     
-    if(s->next == NULL){
-        return 0;
-    }
-    if(s->head == true){
-        clearStack(s->next);
-    }
+    if(s->next == NULL) return 0;
+
+    if(s->head == true) clearStack(s->next);
     return a;
 }
 
-int clearStack(Stack *s){
-
+int clearStack(Stack *s)
+{
     int a = clear(s->next);
     
     if(s -> next == NULL){
@@ -106,7 +114,8 @@ int clearStack(Stack *s){
     return a;
 }
 
-Stack newStack(){
+Stack newStack()
+{
     Stack s;
     s.next  = NULL;
     s.head  = true;

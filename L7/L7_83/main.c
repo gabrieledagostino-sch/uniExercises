@@ -20,7 +20,7 @@
 
 
 #define N 10000
-#define SN 100
+#define SN 101
 
 
 struct strLen{

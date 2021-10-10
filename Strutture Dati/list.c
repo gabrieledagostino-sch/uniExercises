@@ -72,11 +72,13 @@ int     freeNode        (ls_Node *l);
 ls_Node* newNode        (const ls_Element val, size_t size);
 
 //General list operations
-int     ls_find         (ls_List l,       const ls_Element val);                    //returns the position of the ls_element val
-ls_Element ls_getAt     (ls_List l,       size_t idx);                              //returns the pointer to the ls_element at the position idx
+int     ls_find         (ls_List  l,      const ls_Element val);                    //returns the position of the ls_element val
+ls_Element ls_getAt     (ls_List  l,      size_t idx);                              //returns the pointer to the ls_element at the position idx
 int     ls_setAt        (ls_List *l,      size_t idx,        const ls_Element val); //changes the value of the idx-th ls_element to val
 int     ls_removeEl     (ls_List *l,      const ls_Element val);                    //removes the first occurrence of the ls_element val
-int     ls_countOcc     (ls_List l,       const ls_Element val);                    //returns the number of occurrence of the ls_element val
+int     ls_countOcc     (ls_List  l,      const ls_Element val);                    //returns the number of occurrence of the ls_element val
+ls_List* ls_concat      (ls_List l1,       ls_List l2);                             //returns a list that is the concatenation of the 2 parameters
+int     ls_ordIns       (ls_List *l,      const ls_Element val);                    //inserts as soon as compare gives a negative value
 
 //General list operations - NodeWise
 int     find            (const ls_Node *l, const ls_Element val, bool (*equals)(void*, void*), size_t idx);
@@ -271,8 +273,6 @@ int     ls_countOcc     (ls_List l, const ls_Element val)
 
 
 
-
-
 /***********************************************************************************************************************************************************
  *
  *  Node operations
@@ -377,7 +377,7 @@ ls_Node*    newNode         (const ls_Element val, size_t size)
 
     if(newEl == NULL)   return NULL;                                                //malloc didn't allocate the node
 
-    newEl -> value      = malloc(sizeof(size));                                     //allocate the value
+    newEl -> value      = malloc(size);                                             //allocate the value
 
     if(newEl -> value == NULL)                                                      //malloc didn't allocate the value
     {   

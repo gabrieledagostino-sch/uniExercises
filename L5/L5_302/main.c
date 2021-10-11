@@ -93,7 +93,7 @@ int main()
     int dispari = -1;
     pariDispari(l, &pari, &dispari);
 
-    printf("Dispari:%d\nPari:%d\n", dispari==-1?-1:dispari+1, pari==-1?-1:pari+1);
+    printf("Dispari:%d\nPari:%d\n", dispari, pari);
 
     return 0;
 }

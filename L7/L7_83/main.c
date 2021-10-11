@@ -36,7 +36,7 @@ void getLine(char *s, size_t l);
 int main(int argc, char** argv)
 {
     struct strLen Arr[N];
-    size_t     n;
+    size_t             n;
 
     scanf("%lu\n", &n);
 

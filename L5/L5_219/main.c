@@ -52,7 +52,7 @@ int main(int argc, char ** argv)
     }
 
     int p = -1;
-    if(contaNElement(l,N,M) > 0)   p = multiplyNM(l, N, M);
+    if(l != NULL) p = multiplyNM(l, N, M);
     printf("%d\n", p);
     return 0;
 }
